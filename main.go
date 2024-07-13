@@ -1,4 +1,4 @@
 package main
 func main() {
-    println("Hello, World!")
+	api := NewAPIServer(":3000", nil)
 }
