@@ -1,5 +1,16 @@
 package main
+
+
 func main() {
-	store := NewStore(db)
-	api := NewAPIServer(":3000", nil)
+	cfg := PostgreSQLConfig{
+		Host:     "localhost",
+		Port:     5432,
+		User:     "youruser",
+		Password: "yourpassword",
+		DBName:   "yourdbname",
+		SSLMode:  "disable",
+	}
+
+	storage := NewPostgreSQLStorage(cfg)
+	defer storage.db.Close()
 }
