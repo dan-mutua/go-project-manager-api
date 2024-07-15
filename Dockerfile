@@ -22,3 +22,4 @@ COPY --from=build-stage /api /api
 EXPOSE 8080
 
 ENTRYPOINT ["/api"]
+
